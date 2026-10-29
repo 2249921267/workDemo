@@ -1,0 +1,27 @@
+[
+  {
+    "file": "assets/images/paperpilot-workspace.png",
+    "sha256": "aa52814a0c2291e782cb61d336f5313d5e2a017d1021391a471ed5288bf7c562",
+    "kind": "supplied/project screenshot"
+  },
+  {
+    "file": "assets/images/paperpilot-home.png",
+    "sha256": "8df423dc53f3b83283c5af6f9e6a588e72e5e733c084faf7021470be61481453",
+    "kind": "supplied/project screenshot"
+  },
+  {
+    "file": "assets/images/paperpilot-metrics.png",
+    "sha256": "cc6c5495c535d7febf3efdae63ffba511742fe09043f5ceb179f768a964f9cf4",
+    "kind": "supplied/project screenshot"
+  },
+  {
+    "file": "assets/images/swarmops-overview.png",
+    "sha256": "cce93bdc0a8edcf5b446d55fcb86c2206c3a7ff0cc78f89a5428886eb242c60d",
+    "kind": "supplied/project screenshot"
+  },
+  {
+    "file": "assets/images/dify-workflow.png",
+    "sha256": "f972d10c1c52f73e4c301fe61a0a1de0c7cd5674610d51981863afe425c0c2b7",
+    "kind": "supplied/project screenshot"
+  }
+]

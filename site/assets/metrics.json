@@ -1,0 +1,226 @@
+{
+  "snapshot_date": "2026-10-29",
+  "paperpilot": {
+    "measured": true,
+    "version": "3.0.0",
+    "measured_on": "2026-10-28T06:56:16.192956+00:00",
+    "environment": {
+      "os": "Windows",
+      "python": "3.13.2",
+      "inference_requests": 0
+    },
+    "corpus": {
+      "source_sha256": "6aff28379d45248ec086bd38a99ca9b3d4e6329e84a2536e6ab98117b3f0906b",
+      "source_pages": 470,
+      "indexed_pages": 385,
+      "article_count": 23,
+      "chunk_count": 2076,
+      "build_ms": 2167.68
+    },
+    "retrieval": {
+      "cases": 67,
+      "baseline": {
+        "hit_at_5": 0.6417910447761194,
+        "mrr_at_5": 0.3380597014925373,
+        "hits": 43,
+        "p50_ms": 1.44,
+        "p95_ms": 2.298,
+        "timing_queries": 201,
+        "language_hits": {}
+      },
+      "enhanced": {
+        "hit_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "hits": 67,
+        "p50_ms": 0.582,
+        "p95_ms": 0.916,
+        "timing_queries": 201,
+        "language_hits": {}
+      },
+      "cold_index_load_ms": 168.308,
+      "query_set_sha256": "c34a9462dd3e2f79e4e3eaa5b9ab74874a61c5c3d5ee68a455f10ebfa1c07029",
+      "definition": "67 条标题锚定定位开发任务，以目标论文和章节同时匹配计分；同一正文，对照标题字段、章节过滤与倒排缓存的组合方案。"
+    },
+    "topic_retrieval": {
+      "cases": 46,
+      "baseline": {
+        "hit_at_5": 0.41304347826086957,
+        "mrr_at_5": 0.2289855072463768,
+        "hits": 19,
+        "p50_ms": 0.968,
+        "p95_ms": 1.449,
+        "timing_queries": 138,
+        "language_hits": {
+          "en": 19,
+          "zh": 0
+        }
+      },
+      "enhanced": {
+        "hit_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "hits": 46,
+        "p50_ms": 0.465,
+        "p95_ms": 0.753,
+        "timing_queries": 138,
+        "language_hits": {
+          "en": 23,
+          "zh": 23
+        }
+      },
+      "query_set_sha256": "738376f176a7d2a7d8fc391daf5897ab73ce8d5c6aa9e86272fad0aef780199b",
+      "definition": "46 条自建中英文主题查询，各 23 条；定位指定论文的方法章节，按 Top-5 同时匹配论文与章节计分。"
+    },
+    "preflight": {
+      "cases": 80,
+      "tp": 40,
+      "tn": 39,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.975609756097561,
+      "recall": 1.0,
+      "f1": 0.9876543209876543,
+      "rules": 10,
+      "definition": "80 条 CC0 合成正负样例，按指定目标规则计分。"
+    },
+    "source_locations": {
+      "checked": 2076,
+      "exact_block_matches": 2076,
+      "rate": 1.0
+    },
+    "limitations": [
+      "题集：标题定位与中英文主题定位分别计分，均为开发者自建。",
+      "方案对照：基线使用清洗正文；新方案叠加标题、章节条件与词汇扩展。",
+      "计时：本机索引预热后重复测量。",
+      "后续验证：独立作者任务、语义质量与实际写作耗时。"
+    ]
+  },
+  "swarmops": {
+    "measured_on": "2026-10-28T08:26:50.302097+00:00",
+    "corpus": {
+      "document_count": 36,
+      "active_documents": 36,
+      "index_version": "22358a14f8733604",
+      "chunks": 213,
+      "embedded_chunks": 213,
+      "characters": 23016,
+      "synthetic_educational": true
+    },
+    "model": "BAAI/bge-small-zh-v1.5",
+    "dimensions": 512,
+    "queries": {
+      "total": 180,
+      "dev": 36,
+      "test": 144,
+      "in_scope": 108,
+      "out_of_scope": 24,
+      "injection": 12
+    },
+    "strategies": [
+      {
+        "strategy": "bm25",
+        "in_scope_queries": 108,
+        "recall_at_5": 0.8055555555555556,
+        "mrr": 0.6646604938271605,
+        "ndcg_at_5": 0.7006161833269667,
+        "false_refusal_rate": 0.10185185185185185,
+        "out_of_scope_refusal_rate": 1.0,
+        "injection_refusal_rate": 1.0,
+        "mean_duration_ms": 5.9883064815140745,
+        "p95_duration_ms": 6.750899978214875
+      },
+      {
+        "strategy": "dense",
+        "in_scope_queries": 108,
+        "recall_at_5": 0.7407407407407407,
+        "mrr": 0.5359567901234568,
+        "ndcg_at_5": 0.5873547866694598,
+        "false_refusal_rate": 0.10185185185185185,
+        "out_of_scope_refusal_rate": 1.0,
+        "injection_refusal_rate": 1.0,
+        "mean_duration_ms": 7.924166667012118,
+        "p95_duration_ms": 8.85270000435412
+      },
+      {
+        "strategy": "hybrid",
+        "in_scope_queries": 108,
+        "recall_at_5": 0.8055555555555556,
+        "mrr": 0.6669753086419753,
+        "ndcg_at_5": 0.7021793041689157,
+        "false_refusal_rate": 0.10185185185185185,
+        "out_of_scope_refusal_rate": 1.0,
+        "injection_refusal_rate": 1.0,
+        "mean_duration_ms": 9.759289814812494,
+        "p95_duration_ms": 10.577999986708164
+      },
+      {
+        "strategy": "hybrid_rerank",
+        "in_scope_queries": 108,
+        "recall_at_5": 0.8148148148148148,
+        "mrr": 0.6706790123456791,
+        "ndcg_at_5": 0.7069186199774913,
+        "false_refusal_rate": 0.10185185185185185,
+        "out_of_scope_refusal_rate": 1.0,
+        "injection_refusal_rate": 1.0,
+        "mean_duration_ms": 9.667697221394283,
+        "p95_duration_ms": 10.761199984699488
+      }
+    ],
+    "default_strategy": "hybrid",
+    "cache": {
+      "samples_per_condition": 20,
+      "query_repeated": true,
+      "uncached_mean_ms": 9.986105001007672,
+      "cached_mean_ms": 2.1727399973315187,
+      "uncached_p95_ms": 10.409600014099851,
+      "cached_p95_ms": 2.3375999880954623
+    },
+    "rules": {
+      "status": "completed",
+      "run_at": "2026-10-28T08:26:41.068876+00:00",
+      "cases": 240,
+      "valid_cases": 220,
+      "invalid_cases": 20,
+      "confusion": {
+        "tp": 340,
+        "fp": 0,
+        "fn": 0,
+        "tn": 10220
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "invalid_rejection_rate": 1.0,
+      "mean_duration_ms": 0.04605954587036236,
+      "p95_duration_ms": 0.0509000092279166,
+      "scope": "synthetic deterministic-rule regression against the specified threshold protocol",
+      "sql_verified": true
+    },
+    "http_load": {
+      "requests": 120,
+      "concurrency": 8,
+      "success_rate": 1.0,
+      "mean_ms": 52.0128383327877,
+      "p95_ms": 69.5867000031285,
+      "requests_per_second": 149.22845159400774,
+      "cache_hits": 120,
+      "wall_seconds": 0.8041362000221852,
+      "scope": "localhost hot-cache retrieval HTTP, shared persistent connection pool, 8 concurrent clients and 120 requests"
+    },
+    "verification": {
+      "release_baseline_tests": 342,
+      "after_sse_fix_tests": 351,
+      "browser_groups": 8,
+      "browser_js_errors": 0
+    },
+    "live_smoke": {
+      "date": "2026-10-28",
+      "data": "synthetic telemetry",
+      "complex_browser_seconds": 20.651,
+      "tokens": 4640,
+      "findings": 8,
+      "citations": 5,
+      "scope": "single successful synthetic fault smoke sample, measured from the browser workflow"
+    }
+  }
+}
